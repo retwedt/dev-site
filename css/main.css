@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*************************** fonts for immersivetouch site **************************************/
+@font-face {
+	font-family: 'novecento-regular';
+	src: url('../type/novecentowide-normal.eot');
+	src: url('../type/novecentowide-normal.eot?#iefix') format('embedded-opentype'),  url('../type/novecentowide-normal.woff') format('woff'),  url('../type/novecentowide-normal.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'novecento-light';
+	src: url('../type/novecentowide-light.eot');
+	src: url('../type/novecentowide-light.eot?#iefix') format('embedded-opentype'),  url('../type/novecentowide-light.woff') format('woff'),  url('../type/novecentowide-light.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'newcicle';
+	src: url('../type/newcicle/newcicle.eot');
+	src: url('../type//newcicle/newcicle.eot?#iefix') format('embedded-opentype'),  url('../type/newcicle/newcicle.woff') format('woff'),  url('../type/newcicle/newcicle.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'newcicle-italics';
+	src: url('../type/newcicle/newcicle-italics.eot');
+	src: url('../type//newcicle/newcicle-italics.eot?#iefix') format('embedded-opentype'),  url('../type/newcicle/newcicle-italics.woff') format('woff'),  url('../type/newcicle/newcicle-italics.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'novecento-demibold';
+	src: url('../type/novecentowide-demibold.eot');
+	src: url('../type/novecentowide-demibold.eot?#iefix') format('embedded-opentype'),  url('../type/novecentowide-demibold.woff') format('woff'),  url('../type/novecentowide-demibold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+/*************************** headers **************************************/
+h1 {
+	font-family: 'novecento-demibold';
+	color: #c8600e;
+	margin-bottom:25px;
+	font-size:25px;
+}
+
+h2 {
+	font-family: 'novecento-regular', helvetica, arial;
+	color: #c8600e;
+	margin-bottom:25px;
+	font-size:20px;
+}
+
+h3 {
+	font-family: 'novecento-demibold', helvetica, arial;
+	color: #c8600e;
+	margin-bottom:50px;
+	margin-top:50px;
+	margin-right:50px;
+	margin-left:50px;
+	font-size:20px;
+}
+
+h4 {
+	font-family: 'novecento-light', helvetica, arial;
+	color: #c8600e;
+	margin-bottom:25px;
+	margin-top:50px;
+	margin-right:50px;
+	margin-left:50px;
+	font-size:20px;
+}
+
+
+.head {
+	font-family: 'novecento-demibold', helvetica, arial;
+	color: #c8600e;
+	margin-bottom:35px;
+	margin-top:50px;
+	margin-left:50px;
+	font-size:25px;
+	}
+	
+
+.subhead {
+	font-family: 'novecento-demibold', helvetica, arial;
+	color: #c8600e;
+	margin-bottom:25px;
+	margin-top:25px;
+	margin-left:50px;
+	font-size:16px;
+}
+
+
+
+/*************************** div to wrap content on every page **************************************/
+.wrapper_page {
+	/*margin: 0 auto*/
+ 	width:auto;
+	height:auto;
+	position:relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*************************** div for main content on every page **************************************/
+.wrapper_nav {
+	position:relative;
+/*	width:auto;
+	height:auto; */
+	margin-left:auto;
+	margin-right:auto;
+	float:left;
+/*	border:1px solid #1a232e;*/
+}
+
+
+.wrapper_mainContent {
+	position:relative;
+/*	width:auto;
+	height:auto; */
+	margin-left:auto;
+	margin-right:auto;
+	float:right;
+/*	border:1px solid #1a232e;*/
+}
+
+
+.wrapper_gallery {
+	position:relative;
+	width:1000px;
+	height:1125px;
+	margin:0 auto;
+/*	background-color:#ffffff; */
+	background-color: rgb(1000, 1000, 1000); /* fallback for browsers that don't support opacity */
+	background-color: rgba(1000, 1000, 1000, .8);
+	border:1px solid #1a232e;
+/*	opacity:0.8; */
+/*	filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+/*************************** div for background image on every page **************************************/
+.backgroundImage {
+	left: 50%;
+	margin-left: auto;
+	margin-right:auto;
+	background:url(../images/background.png) no-repeat;
+	width:1280px;
+	height:720px;
+
+}
+
+
+/*************************** header image for main subheading pages **************************************/
+.headerImage {
+	width:auto;
+	height:auto;
+	position:relative;
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+	text-align:center;
+}
+.home_page_content_1 {
+	/*width: 45%;*/
+	z-index: 1;
+	display: inline-block;
+	vertical-align: top;
+	align: center;
+	/*padding: 0 80px 0 80px;*/
+	margin-bottom:2em
+}
+.home_page_content_1 p {
+	margin: 1em 0
+}
+.home_page_content_2 {
+	/*width:45%;*/
+	/*margin-left:2%;*/
+	align: center;
+	/*padding: 0 80px 0 80px;*/
+	display:inline-block;
+	vertical-align:top
+}
+.home_page_content_2 img {
+
+-webkit-box-shadow:  3px 5px 5px 0px rgba(0, 0, 0, .2);
+        
+        box-shadow:  3px 5px 5px 0px rgba(0, 0, 0, .2);
+}
+
+
+
+
+/*************************** Table on Packages page for showing catalog content **************************************/
+.packages {
+	position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.packages table {
+	background-color: none;
+}
+
+.packages table tr td {
+	padding: 2px 2px 2px 2px;
+}
+
+.packageLabel {
+	width:240px;
+	text-align:left;
+}
+
+.maintenanceLabel {
+	width:360px;
+	text-align:left;
+}
+
+.packageAttribute {
+	width: 60px;
+	text-align:center;
+}
+
+.gray {
+/*	background-color:#ffffff; */
+	background-color: rgb(184,184,184); /* fallback for browsers that don't support opacity */
+	background-color: rgba(184, 184, 184, .8);
+}
+
+.white {
+/*	background-color:#ffffff; */
+/*	background-color: rgb(1000, 1000, 1000); /* fallback for browsers that don't support opacity */
+	background-color: rgba(1000, 1000, 1000, .8);
+}
+
+
+/*******Style for FDA clearance info at bottom of page******************/
+.fda {
+	font-family: 'novecento-light', helvetica, arial;
+}
+
+
+/****Banner on index - added 9-29-2013 - Sam E. **********/
+.banner {
+	font-family: 'novecento-light', helvetica, arial;
+	background-color: #1a232e;
+	padding: 1em;
+	margin: 0 200px 0 200px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.banner p {
+	color:#fff;
+	font-size:14px;
+	line-height:24px
+}
+
+
+.banner a {
+/*	color:#fff;
+	font-size:14px;
+	text-decoration: none;*/
+	color:#c8600e;
+	font-size:14px;
+}
+
+.banner a:visited {
+	color:#8BE2FF;
+}
+
+
+.banner strong {
+	font-size:18px;
+}
+
+/***************************  **************************************/
+body {
+/*padding:50px 100px; */
+
+font:13px/150% Verdana, Tahoma, sans-serif;
+}
+
+/* PHP form tutorial */
+.form{
+	margin-bottom:75px;
+	width: 450px;
+}
+input, textarea {
+	padding: 9px;
+	border: solid 1px #1a232e;
+	outline: 0;
+	font: normal 13px/100% Verdana, Tahoma, sans-serif;
+	width: 200px;
+	background: #FFFFFF url('bg_form.png') left top repeat-x;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+}
+textarea {
+	width: 500px;
+	max-width: 400px;
+	height: 150px;
+	line-height: 90%;
+}
+input:hover, textarea:hover, input:focus, textarea:focus {
+	border-color: #c8600e;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=145, Strength=2);
+}
+.form label {
+	font-family: 'novecento-normal', helvetica, arial;
+	font-size:12px;
+	margin-left: 50px;
+	margin-right:5px;
+	color: #1a232e;
+}
+.submit{  
+    width: auto;  
+    padding: 9px 15px;  
+	background: -webkit-gradient(linear, left top, left 25, from(#c8600e), color-stop(4%, #EEEEEE), to(#c8600e));
+	background: -moz-linear-gradient(top, #c8600e, #EEEEEE 1px, #c8600e 25px); 
+	background: -ms-linear-gradient (top, #c8600e, #EEEEEE 1px, #c8600e 25px); filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#EEEEEE', endColorstr='#c8600e'); /* IE6 & IE7 */ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#EEEEEE', endColorstr='#c8600e')"; /* IE8 */ 
+    border: 1px;
+	border-color: #c8600e; 
+    font-size: 14px;  
+    color: #FFFFFF;  
+    -moz-border-radius: 5px;  
+    -webkit-border-radius: 5px;
+	
+    } 
+	.submit:hover{  
+	background: -webkit-gradient(linear, left top, left 25, from(#c8600e), color-stop(4%, #FFFFFF), to(#c8600e));
+	background: -moz-linear-gradient(top, #c8600e, #FFFFFF 1px, #c8600e 25px);
+	background: -ms-linear-gradient (top, #c8600e, #EEEEEE 1px, #c8600e 25px);
+	color: #1a232e;
+    }  
+
+/*************************** main paragraph and text group for each page **************************************/
+p {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin-left:50px;
+	color: #1a232e;
+	margin-right:50px;
+	margin-bottom:35px;
+}
+
+.text_group{
+	list-style-position: inside;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom:35px;
+}
+
+.text_group p {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin-left:50px;
+	color: #1a232e;
+	margin-right:50px;
+	margin-bottom:-2px;
+	line-height:20px;
+/*	opacity: 1.0; */
+}
+
+.text_group_spec{
+	margin-bottom:800px;
+}
+.text_group_spec_2{
+	margin-bottom:900px;
+}
+.neg_topmar{
+	margin-top:-25px;
+}
+
+
+
+
+a img {border: none; }
+
+
+/*************************** copyright content **************************************/
+#copyright{
+	font-size:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	color: #5C8A8A;
+	padding-bottom:10px;
+	padding-top:10px;
+	position:relative;
+	display:block;
+	margin-left:200px;
+}
+

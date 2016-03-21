@@ -1,7 +1,0 @@
-# Ignore the built version of the site
-public
-
-# Client and server-side dependencies
-node_modules
-bower_components
-

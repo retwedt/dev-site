@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="images/favicon.ico">
+<meta name="author" content="Rex Twedt III" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/navigation.css" rel="stylesheet" type="text/css">
+
+
+
+<!--google analytics-->
+
+
+
+
+</head>
+<body>
+  <div class="nav"> 
+    <script>
+			var el = document.getElementsByTagName("body")[0];
+			el.className = "";
+	</script>
+
+	<script src="js/jquery.js"></script> 
+	<script src="js/modernizr.js"></script>
+
+
+    <nav id="topNav" >
+    <table style="margin-left:42%; margin-right:auto; margin-top:60px;">
+    	<tbody >
+    		<tr><td><a href="home.html" title="" target="mainContent"><img src="images/pic_nav.png" width="200px" alt=""/></a><br><br><br>
+            <a href="home.html" title="" target="mainContent" style="text-decoration:none; color:#000; size:18px; ">Rex Twedt Medical Illustration</a></td></tr>
+            <tr>
+				<td >
+     <ul >
+		<li><a href="about.html" title="" target="mainContent">About</a>
+        </li> <br>
+        
+		<li><a href="news.html" title="" target="mainContent">News</a>
+        </li> <br>
+
+        <li><a href="projects.html" title="" target="mainContent">Projects</a>
+          <ul>
+            <li><a href="nmhmc.html" title="" target="mainContent">NMH+MC Fellowship</a></li>
+            <li><a href="research.html" title="" target="mainContent">Augmented Reality Research</a></li>
+            <li><a href="antibodiesAnimation.html" title="" target="mainContent"><em>Antibodies Attack!</em> Animation </a> </li>
+            <li><a href="robofortressGame.html" title="" target="mainContent"><em>RoboFortress</em> Interactive Game </a> </li>
+            </ul>
+        </li> <br>
+        
+        <li><a href="gallery.html" title="" target="mainContent">Gallery</a>
+          <ul>
+            <li><a href="images.html" title="" target="mainContent">Still Images</a></li>
+            <li><a href="animation.html" title="" target="mainContent">Animation</a></li>
+            </ul>
+        </li> <br>
+
+		<li><a href="contact.html" title="" target="mainContent">Contact</a>
+        </li> <br>
+        
+      </ul>
+     </td>
+    		</tr>
+               	    </tbody>
+    </table>
+    </nav>
+    </div>
+</div>
+
+   	
+    <script>
+			(function($){
+				
+				//cache nav
+				var nav = $("#topNav");
+				
+				//add indicator and hovers to submenu parents
+				nav.find("li").each(function() {
+					if ($(this).find("ul").length > 0) {
+						$("<span>").text("").appendTo($(this).children(":first"));
+
+						//show subnav on hover
+						$(this).mouseenter(function() {
+							$(this).find("ul").stop(true, true).slideDown();
+						});
+						
+						//hide submenus on exit
+						$(this).mouseleave(function() {
+							$(this).find("ul").stop(true, true).slideUp();
+						});
+					}
+				});
+			})(jQuery);
+	</script> 
+</body>
+</html>
