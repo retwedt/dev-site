@@ -107,13 +107,13 @@ function addClicker(element) {
 		if (index<0){
 			pushURL = "home";
 			// var fullURL = window.location.protocol + "//" + window.location.hostname + "/" + "rextwedt.com/"; //for wamp testing
-			var fullURL = window.location.protocol + "//" + window.location.hostname + ":8080/"; //for node testing
-			// var fullURL = window.location.protocol + "//" + window.location.hostname + "/"; //for server
+			// var fullURL = window.location.protocol + "//" + window.location.hostname + ":8080/"; //for node testing
+			var fullURL = window.location.protocol + "//" + window.location.hostname + "/"; //for server
 		} else {
 			pushURL = pushURL.slice(index+1);
 			// var fullURL = window.location.protocol + "//" + window.location.hostname + "/" + "rextwedt.com/#" + pushURL; //for wamp testing
-			var fullURL = window.location.protocol + "//" + window.location.hostname + ":8080/#" + pushURL; //for node testing
-			// var fullURL = window.location.protocol + "//" + window.location.hostname + "/#" + pushURL; //for server
+			// var fullURL = window.location.protocol + "//" + window.location.hostname + ":8080/#" + pushURL; //for node testing
+			var fullURL = window.location.protocol + "//" + window.location.hostname + "/#" + pushURL; //for server
 		}
 
 		//if user clicks on projects or gallery button or mobile menu button, cancel the ajax call, you don't want to load these pages!
