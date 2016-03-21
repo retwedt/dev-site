@@ -2,6 +2,9 @@
 
 This website was built to function as a single page web app, using AJAX to provide a smooth transition between content and a seamless user experience.  Several additional tools for convenient modern web development were used:
 
+-	[Gulp](http://gulpjs.com/) - automation with JavaScript and Node.js
+-	[Node.js](https://nodejs.org/en/) - a framework for server-side JavaScript development
+-	[SCSS](http://sass-lang.com/) - a flexible css extension 
 -	[JQuery](https://jquery.com/) - a popular JS library built around simplifying code and maximizing compatibility
 -	[Bootstrap](http://getbootstrap.com/) - responsive HTML/CSS/JS framework
 -	[Bootstrap Dropdown Hover plugin](https://github.com/CWSpear/bootstrap-hover-dropdown) - plug-in to allow Bootstrap dropdown menus to activate on hover 
