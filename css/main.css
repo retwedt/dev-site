@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document for main style*/
+
+/*jello layout*/
+.bodydiv {
+	padding: 0 350px 0 350px;
+}
+	
+/*jello layout*/
+.sizer {
+	width: 50%;
+	margin: 0 auto 0 auto;
+}
+
+/*main content wrapper*/
+.maincontent {
+	display:block;
+	min-width:840px;
+	background-color:#8DA893;
+	padding-top:2em;
+	position:relative;
+	margin-top:1em;
+}
+
+/*page settings*/
+#page {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	display:block;
+	background-color:#FFFFFF;
+	margin-left:-350px;
+	margin-right:-350px;
+	min-width:840px;
+	max-width:1016px;
+}
+
+
+/*header*/
+#headerbox {
+	display:block;
+	background-color:#163440;
+	min-width:840px;
+	height:10em;
+	padding-top:2em;
+	position:relative;
+}
+
+/*logo settings*/
+#logo {
+	position:absolute;
+	top:14px;
+	left:8%;
+	width:200px;
+	height:100px;
+	background-color:#8DA893;
+}
+
+/*name setting*/
+.line1 {
+	font-size:30px;
+	padding-left:5px;
+	margin-top:10px;
+	color:#FFF;
+	text-decoration:none;
+}
+
+/*title setting*/
+.line2 {
+	font-size:20px;
+	padding-left:5px;
+	color:#FFF;
+	text-decoration:none;
+}
+
+hr {
+	height:3px;
+	background-color:#999;
+}
+
+/*navigation bar*/
+#navcontainer ul {
+	position:absolute;
+	right:6%;
+	top:1px;
+
+	padding: 0;
+	font-family: arial, helvetica, sans-serif;
+	font-size:12px;
+	width: 400px;
+	height:40px;
+}
+
+#navcontainer li {
+	display: inline;
+}
+
+#navcontainer a {
+	padding: 1em;
+	background-color: #8DA893;
+	color: White;
+	/*border-right: 1px solid #fff;*/
+	/*border-left: 1px solid #fff;*/
+	text-decoration: none;
+	float: left;
+	width: 13%;
+	height:15px;
+	text-align:	center;
+}
+
+#navcontainer ul li a:hover {
+	/*background-color: #CCC;*/
+	color: #FFF;
+	height:18px;
+	padding-top:18px;
+	transition:padding-top 0.4s;
+	transition:height 0.4s;
+	
+	/*Modzilla*/
+	-moz-transition:padding-top 0.4s;
+	-moz-transition:height 0.4s;
+	
+	/*Chrome and Safari*/
+	-webkit-transition:padding-top 0.4s;
+	-webkit-transition:height 0.4s;
+	
+	/*Opera*/
+	-o-transition:padding-top 0.4s;
+	-o-transition:height 0.4s;
+	
+	background: rgb(162,224,239); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(162,224,239,1) 0%, rgba(117,189,209,1) 41%, rgba(108,167,183,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(162,224,239,1)), color-stop(41%,rgba(117,189,209,1)), color-stop(100%,rgba(108,167,183,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(162,224,239,1) 0%,rgba(117,189,209,1) 41%,rgba(108,167,183,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(162,224,239,1) 0%,rgba(117,189,209,1) 41%,rgba(108,167,183,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(162,224,239,1) 0%,rgba(117,189,209,1) 41%,rgba(108,167,183,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(162,224,239,1) 0%,rgba(117,189,209,1) 41%,rgba(108,167,183,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2e0ef', endColorstr='#6ca7b7',GradientType=0 ); /* IE6-9 */
+}
+
+/*title bar*/
+#pagetitle {
+	display:block;
+	text-align:center;
+	width:160px;
+	height:60px;
+	background-color:#163440;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:2em;
+	margin-bottom:-4em;
+	padding-top:1em;
+	position:relative;
+	z-index:10;
+}
+
+h2 {
+	color:#fff;
+}
+
+
+
+/*footer*/
+#footerbox {
+	display:block;
+	background-color:#163440;
+	min-width:840px;
+	height:5em;
+	padding-top:1em;
+	position:relative;
+}
+
+/*copyright settings*/
+#copyright{
+	display:block;
+	text-align:left;
+	font-size:10px;
+	width:65%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:1em;
+	padding:3px;
+	background-color:#8DA893;
+}

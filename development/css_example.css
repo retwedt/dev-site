@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+h1 {
+	color:blue;
+	font: Arial, Helvetica, sans-serif;
+	text-align:center;
+	text-transform:uppercase;
+}
+
+h1 em {
+	color:green;	
+}
+
+h2 {
+	color:#FFFF00;
+	background-color:#330066;
+}
+
+h3 {
+	color:red;
+	font-size: 20;
+	font:"Trebuchet MS", Arial, Helvetica, sans-serif
+}
+
+/*class*/
+.yellow {
+	background-color:yellow;	
+}
+
+/*class span*/
+.yellow span {
+	background-color:green;
+	color:#33FF33;	
+}
+
+/*descendant class*/
+p strong {
+	color:#63F;
+	text-decoration:underline;
+}
+
+/*id*/
+#formatText {
+	color:990033;
+	text-decoration:blink;
+}
+
+/**/
+a.styledLink:link {
+	text-decoration:underlined;
+	color:#600;	
+}
+
+a.styledLink:visited {
+	text-decoration:line-through;
+	color:#9F0;
+}
+
+a.styledLink:hover {
+	text-decoration:blink;
+	color:#00F;
+	background-color:#999;
+}
+
+a.styledLink:active {
+}
+
+
+
+#para {
+	display:block;
+	width:75%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#navcontainer ul
+{
+padding-left: 0;
+margin-left: 0;
+background-color: #036;
+color: White;
+float: left;
+width: 100%;
+font-family: arial, helvetica, sans-serif;
+}
+
+#navcontainer ul li { display: inline; }
+
+#navcontainer ul li a
+{
+padding: 0.2em 1em;
+background-color: #036;
+color: White;
+text-decoration: none;
+float: left;
+border-right: 1px solid #fff;
+}
+
+#navcontainer ul li a:hover
+{
+background-color: #369;
+color: #fff;
+}
+
+
