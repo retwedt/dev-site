@@ -64,7 +64,7 @@ gulp.task("html", function() {
 		.pipe(liveReload());
 });
 
-
+// Copy images to the public folder
 gulp.task("images", function () {
 	var img = gulp.src("source/img/**/*.*")
 		.pipe(newer("public/img"))
@@ -148,13 +148,21 @@ gulp.task("js", function() {
 		.pipe(liveReload());
 });
 
+// Copy hosting files to public folder
+gulp.task("hosting", function() {
+	return hosting = gulp.src("source/hosting/*")
+		.pipe(gulp.dest("public"));
+});
+
+
 gulp.task("build", [
 	"html",
 	"images",
 	"vendor-css",
 	"sass",
 	"vendor-js",
-	"js"
+	"js",
+	"hosting"
 ]);
 
 
@@ -196,3 +204,14 @@ gulp.task("default", [
 	"build",
 	"run"
 ]);
+
+
+// Deploy "public" folder to master github branch
+// Master branch is used instead of gh-pages
+gulp.task('deploy', ['build'], function() {
+  return gulp.src('public/**/*')
+    .pipe(deploy({
+      repository: 'https://github.com/retwedt/retwedt.github.io.git',
+      branches:   ['master']
+    }));
+});
