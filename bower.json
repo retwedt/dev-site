@@ -1,0 +1,20 @@
+{
+  "name": "Rex Twedt Medical Illustration",
+  "description": "Rex Twedt Medical Illustration",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://github.com/retwedt/retwedt.github.io#readme",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "fancyBox": "~2.1.5",
+    "bootstrap-hover-dropdown": "~2.2.1",
+    "bootstrap-validator": "~0.10.1"
+  }
+}

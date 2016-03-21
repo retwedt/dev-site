@@ -1,0 +1,47 @@
+@import "custom-bootstrap-variables";
+@import "bootstrap";
+
+/* PAGE SPECIFIC PARTIAL SCSS */
+@import "navbar";
+@import "images";
+@import "contact-form";
+
+
+/* DEFAULT SETTINGS */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* MAIN PAGE WRAPPERS */
+/* main minimum height of content the full height of the page */
+.main {
+	min-height: calc(100% - 158px);
+}
+#content {
+	background-color:#fff;
+	padding: 10px;
+}
+#copyright {
+	font-size:16px;
+	color: #3B473D;
+	text-align:center;
+	padding: 10px;
+	height: 50px;
+}
+
+
+/* GENERAL MEDIA QUERIES */
+@media (max-width: $screen-sm-min) {
+	// Add horizontal space around containers on phone screens
+	.container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
