@@ -14,6 +14,7 @@ This website was built to function as a single page web app, using AJAX to provi
 
 ```
 ├── source/
+  ├── hosting/
   ├── html/
     └── content/          # html fragments inserted into index.html via AJAX
   ├── img/
@@ -21,12 +22,9 @@ This website was built to function as a single page web app, using AJAX to provi
     └── projects/
   ├── js/
   └── scss/
-├── 50.62.233.1.txt
 ├── bower.json            # which client-side packages are needed
 ├── gulpfile.js           # gulp script that defines various automation tasks
 ├── package.json          # which node packages are needed
-├── CNAME                 # hosted at www.rextwedt.com
-├── LICENSE               # MIT license
 ├── CHANGELOG.md
 └── README.md
 ```
