@@ -1,5 +1,4 @@
-# CHANGELOG
-## for www.rextwedt.com
+# CHANGELOG for www.rextwedt.com
 
  - 2016-03-25 - Reorganize SASS for images, simplify HTML/CSS for galleries.  Add image and content to homepage.  Fix issue on contact page where text was white.  Update social media/resume links on contact page.  Fix gulp deploy task.
  - 2016-03-21 - Reorganize Github projects for website.  Development site and past versions are now hosted [here] (https://github.com/retwedt/dev-site).  This repository holds the source, gulp, node, and bower files.  It does NOT have a working build of the site.  Live version of site is [here] (https://github.com/retwedt/retwedt.github.io).  Initial commit of redesigned site, it is now live!
