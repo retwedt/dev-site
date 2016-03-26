@@ -206,12 +206,12 @@ gulp.task("default", [
 ]);
 
 
-// Deploy "public" folder to master github branch
-// Master branch is used instead of gh-pages
-gulp.task('deploy', ['build'], function() {
-  return gulp.src('public/**/*')
+// Deploy "public" folder to retwedt.github.io repository
+gulp.task('deploy', function() {
+  return gulp.src('public/**/*', { read: false })
     .pipe(deploy({
       repository: 'https://github.com/retwedt/retwedt.github.io.git',
-      branches:   ['master']
+      branches:   ['master'],
+      prefix: 'public' // remove public prefix to put contents directly into repository
     }));
 });
