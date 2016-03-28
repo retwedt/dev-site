@@ -206,12 +206,18 @@ gulp.task("default", [
 ]);
 
 
-// Deploy "public" folder to retwedt.github.io repository
-gulp.task('deploy', function() {
-  return gulp.src('public/**/*', { read: false })
+// Task to deploy "public" folder to retwedt.github.io repository
+gulp.task("deploy-git", function() {
+  return gulp.src("public/**/*", { read: false })
     .pipe(deploy({
-      repository: 'https://github.com/retwedt/retwedt.github.io.git',
-      branches:   ['master'],
-      prefix: 'public' // remove public prefix to put contents directly into repository
+      repository: "https://github.com/retwedt/retwedt.github.io.git",
+      branches:   ["master"],
+      prefix: "public", // remove public prefix to put contents directly into repository
+      message: "rebuild site and commit to server"
     }));
 });
+// build and deploy to retwedt.github.io repository
+gulp.task("deploy", [
+	"build",
+	"deploy-git"
+]);
