@@ -4,7 +4,6 @@
 //*******************html content*******************
 var homeURL = "content/home.html";
 
-
 //*******************get dom elements*******************
 //get all links from nav wrapper and store them in an array
 var navDiv = document.querySelector(".nav");
@@ -32,18 +31,12 @@ window.onload = function() {
 		}
 
 		window.addEventListener("popstate", function(e) {
-			//for debugging
-			console.log("pop");
-
 	 		var url = parseURL();
 	 		loadPage(url, false);
 	    	}
 		, false);
 	}
 }
-
-
-
 
 
 // check if browser supports history api
@@ -93,9 +86,6 @@ function parseURL(){
 // add event listener to html element to load page when clicked on
 function addClicker(element) {
   element.addEventListener("click", function(e) {
-		//for debugging
-		console.log("click");
-
 		//prevend default action of button
 		e.preventDefault();
 
@@ -106,12 +96,20 @@ function addClicker(element) {
 		//if there is no href, the user is trying to go home
 		if (index<0){
 			pushURL = "home";
-			// var fullURL = window.location.protocol + "//" + window.location.hostname + ":8080/"; //for node testing
-			var fullURL = window.location.protocol + "//" + window.location.hostname + "/"; //for server
+			// update history differently on local vs. server
+			if (window.location.hostname.charAt(0) === "1") {
+				var fullURL = window.location.protocol + "//" + window.location.hostname + ":8080/"; //for node testing
+			} else {
+				var fullURL = window.location.protocol + "//" + window.location.hostname + "/"; //for server
+			}
 		} else {
 			pushURL = pushURL.slice(index+1);
-			// var fullURL = window.location.protocol + "//" + window.location.hostname + ":8080/#" + pushURL; //for node testing
-			var fullURL = window.location.protocol + "//" + window.location.hostname + "/#" + pushURL; //for server
+			// update history differently on local vs. server
+			if (window.location.hostname.charAt(0) === "1") {
+				var fullURL = window.location.protocol + "//" + window.location.hostname + ":8080/#" + pushURL; //for node testing
+			} else {
+				var fullURL = window.location.protocol + "//" + window.location.hostname + "/#" + pushURL; //for server
+			}
 		}
 
 		//if user clicks on projects or gallery button or mobile menu button, cancel the ajax call, you don't want to load these pages!
