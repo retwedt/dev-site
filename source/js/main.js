@@ -1,17 +1,17 @@
 //main.js
 // ajax content into #content div for a seamless user experience
 
+
 //*******************html content*******************
 var homeURL = "content/home.html";
+
 
 //*******************get dom elements*******************
 //get all links from nav wrapper and store them in an array
 var navDiv = document.querySelector(".nav");
 var lst = navDiv.querySelectorAll("a");
-
 //main content div
 var contentDiv = document.getElementById("content");
-
 //nav-panel-mobile for collapsing nav onclick
 var navPanelMobile = document.getElementById("nav-panel-mobile");
 
@@ -88,11 +88,9 @@ function addClicker(element) {
   element.addEventListener("click", function(e) {
 		//prevend default action of button
 		e.preventDefault();
-
 		//check for href of element that was clicked on
    	var pushURL = element.href;
 		var index = pushURL.indexOf("#");
-
 		//if there is no href, the user is trying to go home
 		if (index<0){
 			pushURL = "home";
@@ -113,7 +111,6 @@ function addClicker(element) {
 		}
 
 		//if user clicks on projects or gallery button or mobile menu button, cancel the ajax call, you don't want to load these pages!
-		// if (pushURL == "projects" || pushURL == "gallery" || pushURL == "nav-panel-mobile"){
 		if (pushURL == "projects"){
 			return false;
 		}
