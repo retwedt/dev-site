@@ -216,7 +216,7 @@ gulp.task("deploy-git", function() {
       message: "rebuild site and commit to server"
     }));
 });
-// build and deploy to retwedt.github.io repository
+// build and deploy site!
 gulp.task("deploy", [
 	"build",
 	"deploy-git"
