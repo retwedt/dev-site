@@ -27,6 +27,7 @@ form {
 		input, textarea {
 			color: #04171D;
 			width: calc(100% - 120px);
+			resize: vertical;
 		}
 	}
 	#submit {
@@ -35,7 +36,7 @@ form {
 	}
 }
 
-.social-media {
+.professional-links {
 	margin: 10px;
 	a {
 		text-decoration: none;
