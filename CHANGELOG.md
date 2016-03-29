@@ -1,6 +1,7 @@
 # CHANGELOG
 ## www.rextwedt.com
 
+ - 2016-03-28 - Final content updates and corrections.  General housekeeping (update comments, remove unnecessary comments, remove unneeded assets, etc.).  Fix issue where textarea element could be expanded beyond border on contact form.  Remove icons on contact page.  Update homepage content.
  - 2016-03-25 - Reorganize SASS for images, simplify HTML/CSS for galleries.  Add image and content to homepage.  Fix issue on contact page where text was white.  Update social media/resume links on contact page.  Fix gulp deploy task.
  - 2016-03-21 - Reorganize Github projects for website.  Development site and past versions are now hosted [here] (https://github.com/retwedt/dev-site).  This repository holds the source, gulp, node, and bower files.  It does NOT have a working build of the site.  Live version of site is [here] (https://github.com/retwedt/retwedt.github.io).  Initial commit of redesigned site, it is now live!
  - 2016-01-27 - Create development version of website.  This uses a Gulp workflow to compile SASS, HTML, and JS into a working project, launch a Node.js local server, and host the site on the server.  Convert all CSS to SASS.  SASS is a flexible CSS extension allowing for nesting, variables, and mixins.  Begin redesign and update of website.
