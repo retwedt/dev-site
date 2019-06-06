@@ -1,7 +1,6 @@
 # Ignore the built version of the site
-public
+dist
 
 # Client and server-side dependencies
 node_modules
-bower_components
 
