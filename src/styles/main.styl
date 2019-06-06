@@ -1,51 +1,52 @@
-@import "custom-bootstrap-variables";
-@import "bootstrap";
+/*
+ * Main Styles for www.rextwedt.com
+ * Copyright Rex Twedt 2019
+ */
 
-/* PAGE SPECIFIC PARTIAL SCSS */
-@import "navbar";
-@import "images";
-@import "contact-form";
+@import "./navbar";
+// @import "images";
+// @import "contact-form";
 
 
 /* DEFAULT SETTINGS */
-* {
-  box-sizing: border-box;
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
+
+html, body
+  width 100%
+  height 100%
+  margin 0
+  padding 0
+  box-sizing border-box
+	font-family serif
+	color #222
 
 
-/* MAIN PAGE WRAPPERS */
+/* PAGE SKELETON */
+
 /* main minimum height of content the full height of the page */
-.main {
-	min-height: calc(100% - 158px);
-}
-#content {
-	background-color:#fff;
-	padding: 10px;
-}
-#copyright {
-	font-size:16px;
-	color: #3B473D;
-	text-align:center;
-	padding: 10px;
-	height: 50px;
-}
-/* fake link style for home page */
-#home-link {
-	color: #8A8E82;
-	text-decoration: underline;
-}
+.main
+	min-height calc(100% - 158px)
 
-/* GENERAL MEDIA QUERIES */
-@media (max-width: $screen-sm-min) {
+#content
+	background-color #fff
+	padding 10px
+
+#copyright
+	position absolute
+	bottom 0
+	width 100%
+	font-size 16px
+	color #3B473D
+	text-align center
+	padding 10px 0
+
+/* fake link style for home page */
+#home-link
+	color #8A8E82
+	text-decoration underline
+
+/* MEDIA QUERIES */
+@media (max-width: $screen-sm-min)
 	// Add horizontal space around containers on phone screens
-	.container {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-}
+	.container
+		padding-left 20px
+		padding-right 20px

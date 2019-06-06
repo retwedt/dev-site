@@ -1,0 +1,75 @@
+/*
+ * Nav bar Styles for www.rextwedt.com
+ * Copyright Rex Twedt 2019
+ */
+
+.nav
+  width 100%
+  display flex
+
+  /* ** logo ** */
+
+  .nav-header
+    padding 0
+    height 84px
+
+    .nav-logo
+      display flex
+      img
+        height 90%
+
+      #nav-title
+        h1
+          font-size 24px
+          margin 4px
+        h2
+          font-size 16px
+          font-style italic
+          margin 4px
+
+
+  /* ** links ** */
+
+  .nav-collapse
+    border none
+    font-size 20px
+    display flex
+
+    .nav-menu-item
+      flex 1 auto
+      padding 16px
+      a
+        color #bbb
+        text-decoration none
+
+    .nav-menu-item a
+      &:hover
+        color #aaa
+        text-shadow 2px 1px 4px #eee
+
+  /* ** mobile ** */
+
+  .nav-toggle
+    border none
+    padding 4px
+    width 40px
+    .bars
+      width 80%
+      height 2px
+      margin 4px
+      background-color #8A8E82
+
+  .nav-toggle
+    &:hover
+      background-color #04171D
+      .bars
+        background-color #04171D
+
+  // Media queries
+  @media (max-width: $screen-sm-min - 1px)
+    li
+      padding 0px
+
+  @media (min-width: $screen-sm-min)
+    li
+      padding 0px

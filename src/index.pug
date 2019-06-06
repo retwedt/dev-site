@@ -1,15 +1,43 @@
 //-
- Webpack config file.
- Copyright Rex Twedt 2019
+  Webpack config file.
+  Copyright Rex Twedt 2019
 
 doctype html
 html(lang='en')
   head
     meta(charset="UTF-8")
     meta(name='viewport' content="width=device-width, initial-scale=1.0")
+    link(href="img/favicon.ico" rel="shortcut icon")
 
     title Rex Twedt Medical Illustration
 
   body
-    main
-      h1 Rex Twedt Medical Illustration!
+    nav(class="nav")
+      div(class="nav-header")
+        div(class="nav-logo")
+          img(src="./img/nav-logo.png" alt="logo")
+          div(id="nav-title")
+            h1 Rex Twedt
+            h2 Medical Illustration
+        button(type="button" class="nav-toggle collapsed")
+          span(class="sr-only") Toggle navigation
+          div(class="bars")
+          div(class="bars")
+          div(class="bars")
+
+      div(class="nav-collapse")
+        div(class="nav-menu-item")
+          a(href="#projects" id="projects-link") Projects
+        div(class="nav-menu-item")
+          a(href="#gallery" id="gallery-link") Gallery
+        div(class="nav-menu-item")
+          a(href="#about" id="about-link") About
+        div(class="nav-menu-item")
+          a(href="#contact" id="contact-link") Contact
+
+    div(class="main-content")
+
+    footer
+      div(id="copyright") Copyright &#169; 
+        span(id="copyright-year") 2019
+        |  Rex Twedt III

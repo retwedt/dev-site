@@ -1,18 +1,19 @@
 // menu.js
 
 // close menu when a new link is clicked
-var winWidth = $( window ).width();
+var winWidth = $(window).width();
+
 // mobile menu
-$('.nav-close').find('a').on('click', function(e){
-	winWidth = $( window ).width();
-	if( winWidth < 768) {
+$('.nav-close').find('a').on('click', function (e) {
+	winWidth = $(window).width();
+	if (winWidth < 768) {
 		$('.navbar-collapse').collapse('toggle');
 	}
 });
 // dropdown menu
-$('.navbar-collapse').find('.dropdown-menu').find('a').on('click', function(e){
-	winWidth = $( window ).width();
-	if( winWidth < 768) {
+$('.navbar-collapse').find('.dropdown-menu').find('a').on('click', function (e) {
+	winWidth = $(window).width();
+	if (winWidth < 768) {
 		$('.navbar-collapse').collapse('toggle');
 	}
 });

@@ -4,6 +4,6 @@
  * Copyright Rex Twedt 2019
  */
 
-require('./main.styl')
+require('./styles/main.styl')
 
 console.log("hello world!@@")
