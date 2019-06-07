@@ -5,16 +5,23 @@
 
 .nav
   width 100%
+  position relative
   display flex
+  justify-content space-between
+  box-shadow 2px 2px 8px #e3e3e3
 
   /* ** logo ** */
 
   .nav-header
     padding 0
     height 84px
+    position relative
 
     .nav-logo
+      height 100%
       display flex
+      align-items center
+      flex-flow row nowrap
       img
         height 90%
 
@@ -34,42 +41,82 @@
     border none
     font-size 20px
     display flex
+    overflow hidden
 
     .nav-menu-item
       flex 1 auto
+      display flex
+      align-items center
       padding 16px
       a
         color #bbb
         text-decoration none
 
-    .nav-menu-item a
+    .nav-menu-item
       &:hover
+        cursor pointer
         color #aaa
         text-shadow 2px 1px 4px #eee
+
+  .nav-collapse.closed
+    // height 0
+    height auto
+  .nav-collapse.open
+    height auto
 
   /* ** mobile ** */
 
   .nav-toggle
+    display none
+    position absolute
+    right 2%
+    top 50%
+    transform translate(0, -50%)
     border none
     padding 4px
     width 40px
+    height 40px
+    background-color #eee
     .bars
       width 80%
       height 2px
       margin 4px
-      background-color #8A8E82
-
-  .nav-toggle
+      background-color #969696
     &:hover
-      background-color #04171D
+      cursor pointer
+      background-color #bbb
       .bars
-        background-color #04171D
+        background-color #888
+  .nav-toggle.closed
+      background-color #aaa
+  .nav-toggle.open
+      background-color #ccc
 
-  // Media queries
-  @media (max-width: $screen-sm-min - 1px)
-    li
-      padding 0px
+// Media queries
+@media (max-width: 1200)
+  li
+    padding 0px
 
-  @media (min-width: $screen-sm-min)
-    li
-      padding 0px
+@media screen and (max-width: 600px)
+  .nav
+    flex-direction column
+    box-shadow 2px 2px 8px #e3e3e3
+
+    .nav-header,
+    .nav-collapse
+      flex 1 100%
+
+    .nav-toggle
+      display block
+
+    .nav-collapse
+      flex-direction column
+      border-top 1px solid #e3e3e3
+      border-bottom 1px solid #e3e3e3
+
+      .nav-menu-item
+        flex 1 100%
+        padding 8px 12px
+
+    .nav-collapse.closed
+      height 0
