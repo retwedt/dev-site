@@ -3,52 +3,53 @@
  * Copyright Rex Twedt 2019
  */
 
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
     port: 9000,
     historyApiFallback: true,
     hot: true,
-    open: true
+    open: true,
   },
   resolve: {
-    extensions: ['.js', '.styl', '.pug']
+    extensions: ['.js', '.styl', '.pug', '.png'],
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.styl$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'stylus-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'stylus-loader'],
       },
       {
         test: /\.pug$/,
-        use: ['pug-loader']
-      }
-    ]
+        use: ['pug-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.pug'
+      template: './src/index.pug',
     }),
   ],
-};
+}
