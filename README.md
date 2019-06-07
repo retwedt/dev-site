@@ -1,29 +1,23 @@
-# Rex Twedt's Website
+# Rex Twedt's Portfolio Website
 
 This website was built to function as a single page web app, using AJAX to provide a smooth transition between content and a seamless user experience.  Several additional tools for convenient modern web development were used:
 
--	[Gulp](http://gulpjs.com/) - automation with JavaScript and Node.js
--	[Node.js](https://nodejs.org/en/) - a framework for server-side JavaScript development
--	[SCSS](http://sass-lang.com/) - a flexible css extension 
--	[JQuery](https://jquery.com/) - a popular JS library built around simplifying code and maximizing compatibility
--	[Bootstrap](http://getbootstrap.com/) - responsive HTML/CSS/JS framework
--	[Bootstrap Dropdown Hover plugin](https://github.com/CWSpear/bootstrap-hover-dropdown) - plug-in to allow Bootstrap dropdown menus to activate on hover 
--	[Fancybox](http://fancybox.net/) - library for displaying images, html content and multi-media using a lightbox overlay
+-	[Node.js](https://nodejs.org/en/) - an open-source, cross-platform JavaScript run-time
+-	[Webpack](https://webpack.js.org/) - an open-source JavaScript module bundler!
+-	[Stylus](http://stylus-lang.com/) - a flexible stylesheet preprpocessor language
 
 ## Directory Structure
 
 ```
-├── source/
+├── src/
   ├── hosting/
-  ├── html/
-    └── content/          # html fragments inserted into index.html via AJAX
   ├── img/
     ├── gallery/
     └── projects/
   ├── js/
-  └── scss/
-├── bower.json            # which client-side packages are needed
-├── gulpfile.js           # gulp script that defines various automation tasks
+  └── styles/
+  ├── views/              # html fragments inserted into index.html via AJAX
+├── webpack.config.js     # setup webpack build process
 ├── package.json          # which node packages are needed
 ├── CHANGELOG.md
 └── README.md
@@ -47,5 +41,15 @@ Version 3 \[[download zip](https://github.com/retwedt/dev-site/archive/version-3
 -	[Bootstrap](http://getbootstrap.com/)
 -	[Bootstrap Dropdown Hover plugin](https://github.com/CWSpear/bootstrap-hover-dropdown)
 -	[Fancybox](http://fancybox.net/)
+
+Version 4 \[[download zip](https://github.com/retwedt/dev-site/archive/version-4.zip)] \[[link](https://github.com/retwedt/dev-site/tree/version-4)\]
+
+-	[Gulp](http://gulpjs.com/) - automation with JavaScript and Node.js
+-	[Node.js](https://nodejs.org/en/) - a framework for server-side JavaScript development
+-	[SCSS](http://sass-lang.com/) - a flexible css extension
+-	[JQuery](https://jquery.com/) - a popular JS library built around simplifying code and maximizing compatibility
+-	[Bootstrap](http://getbootstrap.com/) - responsive HTML/CSS/JS framework
+-	[Bootstrap Dropdown Hover plugin](https://github.com/CWSpear/bootstrap-hover-dropdown) - plug-in to allow Bootstrap dropdown menus to activate on hover
+-	[Fancybox](http://fancybox.net/) - library for displaying images, html content and multi-media using a lightbox overlay
 
 
