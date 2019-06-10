@@ -23,7 +23,7 @@ module.exports = {
     open: true
   },
   resolve: {
-    extensions: [".js", ".styl", ".pug", ".png"]
+    extensions: [".js", ".styl", ".pug", ".png", ".html"]
   },
   module: {
     rules: [
@@ -44,6 +44,12 @@ module.exports = {
       {
         test: /\.pug$/,
         use: ["pug-loader"]
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: "html-loader"
+        }
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
