@@ -18,7 +18,7 @@ window.onload = () => {
   if (supports_history_api()) {
     // Parse url and load page
     const url = parseURL();
-    loadPage(url, false);
+    loadPage(url);
 
     // Add click events to all buttons in the nav-wrapper
     const navButtons = collapsibleMenuEl.querySelectorAll("a");
@@ -57,7 +57,7 @@ window.onload = () => {
       _ => {
         // TODO(rex): Handle the transition.
         const url = parseURL();
-        loadPage(url, false);
+        loadPage(url);
       },
       false
     );
