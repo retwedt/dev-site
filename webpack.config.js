@@ -26,8 +26,7 @@ module.exports = {
     extensions: [".js", ".styl", ".pug", ".png", ".html"]
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
@@ -61,6 +60,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.pug"
     }),
-    new CopyWebpackPlugin([{ from: `${srcPath}/img`, to: `${outputPath}/img` }])
+    new CopyWebpackPlugin([{
+      from: `${srcPath}/img`,
+      to: `${outputPath}/img`
+    }, {
+      from: `${srcPath}/html/content`,
+      to: `${outputPath}/content`
+    }])
   ]
 };
