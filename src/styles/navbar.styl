@@ -42,6 +42,7 @@
     font-size 20px
     display flex
     overflow hidden
+    transition height 0.2s ease-out
 
     .nav-menu-item
       flex 1 auto
@@ -55,14 +56,10 @@
     .nav-menu-item
       &:hover
         cursor pointer
-        color #aaa
-        text-shadow 2px 1px 4px #eee
-
-  .nav-collapse.closed
-    // height 0
-    height auto
-  .nav-collapse.open
-    height auto
+        a
+          color #aaa
+          text-shadow 2px 1px 4px #eee
+          transition all 0.2s ease-out
 
   /* ** mobile ** */
 
@@ -84,13 +81,22 @@
       background-color #969696
     &:hover
       cursor pointer
-      background-color #bbb
-      .bars
-        background-color #888
   .nav-toggle.closed
       background-color #aaa
+      &:hover
+        background-color #bbb
+        transition all 0.2s ease-out
+        .bars
+          background-color #888
+          transition all 0.2s ease-out
   .nav-toggle.open
       background-color #ccc
+      &:hover
+        background-color #bbb
+        transition all 0.2s ease-out
+        .bars
+          background-color #888
+          transition all 0.2s ease-out
 
 // Media queries
 @media (max-width: 1200)
@@ -102,8 +108,7 @@
     flex-direction column
     box-shadow 2px 2px 8px #e3e3e3
 
-    .nav-header,
-    .nav-collapse
+    .nav-header
       flex 1 100%
 
     .nav-toggle
@@ -117,6 +122,3 @@
       .nav-menu-item
         flex 1 100%
         padding 8px 12px
-
-    .nav-collapse.closed
-      height 0

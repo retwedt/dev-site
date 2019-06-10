@@ -4,32 +4,22 @@
  * Copyright Rex Twedt 2019
  */
 
-require('./styles/main.styl')
-require('./img/nav-logo.png')
+import { initNavMenu, initNavMenuResizeListener } from "./js/menu";
 
-console.log('hello world!@@')
+import "./styles/main.styl";
 
-const navToggle = document.querySelector('.nav-toggle')
-console.log(navToggle)
-const navCollapse = document.querySelector('.nav-collapse')
-console.log(navCollapse)
+const menuToggle = document.querySelector(".nav-toggle");
+const collapsibleMenu = document.querySelector(".nav-collapse");
 
 //*******************onload event*******************
 // when window loads, setup events on buttons and browser
 window.onload = () => {
-  navToggle.addEventListener('click', () => {
-    console.log('You clicked it!')
-    const open = navCollapse.classList.contains('open')
-    if (open) {
-      navToggle.classList.remove('open')
-      navToggle.classList.add('closed')
-      navCollapse.classList.remove('open')
-      navCollapse.classList.add('closed')
-    } else {
-      navToggle.classList.remove('closed')
-      navToggle.classList.add('open')
-      navCollapse.classList.remove('closed')
-      navCollapse.classList.add('open')
-    }
-  })
-}
+  menuToggle.addEventListener("click", _ => {
+    initNavMenu(collapsibleMenu);
+  });
+
+  window.addEventListener("resize", e => {
+    const width = e.target.innerWidth;
+    initNavMenuResizeListener(collapsibleMenu, width);
+  });
+};

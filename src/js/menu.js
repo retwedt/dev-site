@@ -1,33 +1,82 @@
-// menu.js
+/*
+ * Dropdown menu
+ * Copyright Rex Twedt 2019
+ */
 
-// close menu when a new link is clicked
-var winWidth = $(window).width();
+import * as raf from "raf";
 
-// mobile menu
-$('.nav-close').find('a').on('click', function (e) {
-	winWidth = $(window).width();
-	if (winWidth < 768) {
-		$('.navbar-collapse').collapse('toggle');
-	}
-});
-// dropdown menu
-$('.navbar-collapse').find('.dropdown-menu').find('a').on('click', function (e) {
-	winWidth = $(window).width();
-	if (winWidth < 768) {
-		$('.navbar-collapse').collapse('toggle');
-	}
-});
+/**
+ *
+ * @param {*} el
+ */
+function collapseSection(el) {
+  const sectionHeight = el.scrollHeight;
 
-// add a slide effect to the mobile dropdown menu
-// $('.navbar-collapse').find('.dropdown').on('show.bs.dropdown', function(e){
-// 	winWidth = $( window ).width();
-// 	if( winWidth < 768) {
-// 	  $('.navbar-collapse').find('.dropdown-menu').slideDown();
-// 	}
-// });
-// $('.navbar-collapse').find('.dropdown').on('hide.bs.dropdown', function(e){
-// 	winWidth = $( window ).width();
-// 	if( winWidth < 768) {
-// 	  $('.navbar-collapse').find('.dropdown-menu').slideUp();
-// 	}
-// });
+  const elTransition = el.style.transition;
+  el.style.transition = "";
+
+  raf(() => {
+    el.style.height = `${sectionHeight}px`;
+    el.style.transition = elTransition;
+
+    raf(() => {
+      el.style.height = `${0}px`;
+    });
+  });
+
+  el.setAttribute("data-collapsed", "true");
+}
+
+/**
+ *
+ * @param {*} el
+ */
+function expandSelection(el) {
+  const sectionHeight = el.scrollHeight;
+
+  el.style.height = `${sectionHeight}px`;
+
+  el.addEventListener("transitionend", function transitionEndCallback() {
+    el.removeEventListener("transitionend", transitionEndCallback);
+
+    el.style.height = null;
+  });
+
+  el.setAttribute("data-collapsed", "false");
+}
+
+/**
+ *
+ * @param {*} menuEl
+ */
+function initNavMenu(menuEl) {
+  const isCollapsed = menuEl.getAttribute("data-collapsed") === "true";
+
+  if (isCollapsed) {
+    expandSelection(menuEl);
+  } else {
+    collapseSection(menuEl);
+  }
+}
+
+/**
+ *
+ * @param {*} menuEl
+ * @param {*} docWidth
+ */
+function initNavMenuResizeListener(menuEl, docWidth) {
+  if (docWidth > 600) {
+    menuEl.style.height = null;
+  } else {
+    const isCollapsed = menuEl.getAttribute("data-collapsed") === "true";
+
+    if (isCollapsed) {
+      menuEl.style.height = `${0}px`;
+    } else {
+      const sectionHeight = menuEl.scrollHeight;
+      menuEl.style.height = `${sectionHeight}px`;
+    }
+  }
+}
+
+export { initNavMenu, initNavMenuResizeListener };
