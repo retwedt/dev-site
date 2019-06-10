@@ -3,23 +3,27 @@
  * Copyright Rex Twedt 2019
  */
 
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
+const srcPath = path.resolve(__dirname, "src");
+const outputPath = path.resolve(__dirname, "dist");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: `${srcPath}/index.js`,
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].js",
+    path: outputPath
   },
   devServer: {
     port: 9000,
     historyApiFallback: true,
     hot: true,
-    open: true,
+    open: true
   },
   resolve: {
-    extensions: ['.js', '.styl', '.pug', '.png'],
+    extensions: [".js", ".styl", ".pug", ".png"]
   },
   module: {
     rules: [
@@ -27,29 +31,30 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+            presets: ["@babel/preset-env"]
+          }
+        }
       },
       {
         test: /\.styl$/,
-        use: ['style-loader', 'css-loader', 'stylus-loader'],
+        use: ["style-loader", "css-loader", "stylus-loader"]
       },
       {
         test: /\.pug$/,
-        use: ['pug-loader'],
+        use: ["pug-loader"]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'],
-      },
-    ],
+        use: ["file-loader"]
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.pug',
+      template: "./src/index.pug"
     }),
-  ],
-}
+    new CopyWebpackPlugin([{ from: `${srcPath}/img`, to: `${outputPath}/img` }])
+  ]
+};
