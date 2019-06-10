@@ -4,22 +4,23 @@
  * Copyright Rex Twedt 2019
  */
 
-import { initNavMenu, initNavMenuResizeListener } from "./js/menu";
+import { toggleNavMenu, initNavMenuResizeListener } from "./js/menu";
 
 import "./styles/main.styl";
 
-const menuToggle = document.querySelector(".nav-toggle");
-const collapsibleMenu = document.querySelector(".nav-collapse");
+const menuToggleEl = document.querySelector(".nav-toggle");
+const collapsibleMenuEl = document.querySelector(".nav-collapse");
 
-//*******************onload event*******************
-// when window loads, setup events on buttons and browser
+// When window loads, setup events on buttons and browser
 window.onload = () => {
-  menuToggle.addEventListener("click", _ => {
-    initNavMenu(collapsibleMenu);
+  // Setup the Mobile Nav Menu toggle.
+  menuToggleEl.addEventListener("click", _ => {
+    toggleNavMenu(collapsibleMenuEl);
   });
 
+  // Setup the window resize listener for the Nav Menu.
   window.addEventListener("resize", e => {
     const width = e.target.innerWidth;
-    initNavMenuResizeListener(collapsibleMenu, width);
+    initNavMenuResizeListener(collapsibleMenuEl, width);
   });
 };

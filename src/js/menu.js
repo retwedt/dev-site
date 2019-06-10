@@ -1,5 +1,7 @@
 /*
  * Dropdown menu
+ * Adapted from Css-Tricks
+ *  https://css-tricks.com/using-css-transitions-auto-dimensions/
  * Copyright Rex Twedt 2019
  */
 
@@ -7,49 +9,49 @@ import * as raf from "raf";
 
 /**
  *
- * @param {*} el
+ * @param {*} menuEl
  */
-function collapseSection(el) {
-  const sectionHeight = el.scrollHeight;
+function collapseSection(menuEl) {
+  const sectionHeight = menuEl.scrollHeight;
 
-  const elTransition = el.style.transition;
-  el.style.transition = "";
+  const menuElTransition = menuEl.style.transition;
+  menuEl.style.transition = "";
 
   raf(() => {
-    el.style.height = `${sectionHeight}px`;
-    el.style.transition = elTransition;
+    menuEl.style.height = `${sectionHeight}px`;
+    menuEl.style.transition = menuElTransition;
 
     raf(() => {
-      el.style.height = `${0}px`;
+      menuEl.style.height = `${0}px`;
     });
   });
 
-  el.setAttribute("data-collapsed", "true");
-}
-
-/**
- *
- * @param {*} el
- */
-function expandSelection(el) {
-  const sectionHeight = el.scrollHeight;
-
-  el.style.height = `${sectionHeight}px`;
-
-  el.addEventListener("transitionend", function transitionEndCallback() {
-    el.removeEventListener("transitionend", transitionEndCallback);
-
-    el.style.height = null;
-  });
-
-  el.setAttribute("data-collapsed", "false");
+  menuEl.setAttribute("data-collapsed", "true");
 }
 
 /**
  *
  * @param {*} menuEl
  */
-function initNavMenu(menuEl) {
+function expandSelection(menuEl) {
+  const sectionHeight = menuEl.scrollHeight;
+
+  menuEl.style.height = `${sectionHeight}px`;
+
+  menuEl.addEventListener("transitionend", function transitionEndCallback() {
+    menuEl.removeEventListener("transitionend", transitionEndCallback);
+
+    menuEl.style.height = null;
+  });
+
+  menuEl.setAttribute("data-collapsed", "false");
+}
+
+/**
+ *
+ * @param {*} menuEl
+ */
+function toggleNavMenu(menuEl) {
   const isCollapsed = menuEl.getAttribute("data-collapsed") === "true";
 
   if (isCollapsed) {
@@ -79,4 +81,4 @@ function initNavMenuResizeListener(menuEl, docWidth) {
   }
 }
 
-export { initNavMenu, initNavMenuResizeListener };
+export { toggleNavMenu, initNavMenuResizeListener };
