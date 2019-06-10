@@ -10,6 +10,7 @@ import "./styles/main.styl";
 
 const menuToggleEl = document.querySelector(".nav-toggle");
 const collapsibleMenuEl = document.querySelector(".nav-collapse");
+const copyrightYearEl = document.querySelector("#copyright-year");
 
 // When window loads, setup events on buttons and browser
 window.onload = () => {
@@ -23,4 +24,8 @@ window.onload = () => {
     const width = e.target.innerWidth;
     initNavMenuResizeListener(collapsibleMenuEl, width);
   });
+
+  // Set the copyright date to the current year.
+  const currentYear = new Date().getFullYear();
+  copyrightYearEl.textContent = currentYear;
 };
