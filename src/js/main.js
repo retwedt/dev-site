@@ -5,6 +5,9 @@
 
 import axios from "axios";
 
+// TODO(rex): Improve this...
+const contentEl = document.querySelector(".content-wrap");
+
 /**
  * Check if browser supports history api
  */
@@ -27,8 +30,9 @@ function loadPage(url) {
   axios
     .get(url)
     .then(response => {
-      // TODO(rex): Do something useful here...
+      // TODO(rex): Improve this...
       console.log(response);
+      contentEl.innerHTML = response.data;
     })
     .catch(err => {
       console.error(err.response);
