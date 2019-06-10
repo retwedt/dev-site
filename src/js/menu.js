@@ -67,7 +67,7 @@ function toggleNavMenu(menuEl) {
  * @param {*} docWidth
  */
 function initNavMenuResizeListener(menuEl, docWidth) {
-  if (docWidth > 600) {
+  if (docWidth > 584) {
     menuEl.style.height = null;
   } else {
     const isCollapsed = menuEl.getAttribute("data-collapsed") === "true";
