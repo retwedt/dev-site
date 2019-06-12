@@ -26,13 +26,15 @@ module.exports = {
     extensions: [".js", ".styl", ".pug", ".png", ".html"]
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
+            presets: ["@babel/preset-env"],
+            plugins: ["@babel/plugin-transform-runtime"]
           }
         }
       },
@@ -60,12 +62,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.pug"
     }),
-    new CopyWebpackPlugin([{
-      from: `${srcPath}/img`,
-      to: `${outputPath}/img`
-    }, {
-      from: `${srcPath}/html/content`,
-      to: `${outputPath}/content`
-    }])
+    new CopyWebpackPlugin([
+      {
+        from: `${srcPath}/img`,
+        to: `${outputPath}/img`
+      },
+      {
+        from: `${srcPath}/html/content`,
+        to: `${outputPath}/content`
+      }
+    ])
   ]
 };
