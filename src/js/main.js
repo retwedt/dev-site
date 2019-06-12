@@ -45,7 +45,7 @@ function parseURL() {
   //if there is no hash (you are trying to go to the homepage)
   let newHash = window.location.hash || "#home";
   newHash = newHash.slice(1);
-  return `content/${newHash}.html`;
+  return `html/${newHash}.html`;
 }
 
 export { supports_history_api, loadPage, parseURL };

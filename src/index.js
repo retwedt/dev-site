@@ -48,7 +48,7 @@ window.onload = () => {
               );
 
               // Load the page and add it to the history.
-              await loadPage(`content/${pushURL}.html`);
+              await loadPage(`html/${pushURL}.html`);
 
               contentEl.classList.remove("fade-out");
             }

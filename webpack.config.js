@@ -68,8 +68,8 @@ module.exports = {
         to: `${outputPath}/img`
       },
       {
-        from: `${srcPath}/html/content`,
-        to: `${outputPath}/content`
+        from: `${srcPath}/html`,
+        to: `${outputPath}/html`
       }
     ])
   ]
