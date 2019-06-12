@@ -12,6 +12,8 @@ import "./styles/main.styl";
 const menuToggleEl = document.querySelector(".nav-toggle");
 const collapsibleMenuEl = document.querySelector(".nav-collapse");
 const copyrightYearEl = document.querySelector("#copyright-year");
+// TODO(rex): Improve this...
+const contentEl = document.querySelector(".content-wrap");
 
 // When window loads, setup events on buttons and browser
 window.onload = () => {
@@ -26,10 +28,8 @@ window.onload = () => {
       element.addEventListener(
         "click",
         e => {
-          //prevend default action of button
+          //prevent default action of button
           e.preventDefault();
-
-          console.log(window.location);
 
           //check for href of element that was clicked on
           let pushURL = element.href;
@@ -39,8 +39,23 @@ window.onload = () => {
           if (index < 0) pushURL = "home";
           else pushURL = pushURL.slice(index + 1);
 
-          // Load the page and add it to the history.
-          loadPage(`content/${pushURL}.html`);
+          contentEl.addEventListener(
+            "transitionend",
+            async function transitionEndCallback() {
+              contentEl.removeEventListener(
+                "transitionend",
+                transitionEndCallback
+              );
+
+              // Load the page and add it to the history.
+              await loadPage(`content/${pushURL}.html`);
+
+              contentEl.classList.remove("fade-out");
+            }
+          );
+
+          contentEl.classList.add("fade-out");
+
           // update history.
           window.history.pushState(
             " ",

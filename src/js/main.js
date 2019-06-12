@@ -20,23 +20,22 @@ function supports_history_api() {
 }
 
 /**
- * AJAX call to load page content.
- * @param {*} url
+ * Async AJAX call to load page content.
+ * @param {String} url
  */
-function loadPage(url) {
-  if (!url) return;
+async function loadPage(url) {
+  if (!url) return false;
 
   //send request
-  axios
-    .get(url)
-    .then(response => {
-      // TODO(rex): Improve this...
-      console.log(response);
-      contentEl.innerHTML = response.data;
-    })
-    .catch(err => {
-      console.error(err.response);
-    });
+  try {
+    const response = await axios.get(url);
+    contentEl.innerHTML = response.data;
+  } catch (err) {
+    console.error(err.response);
+    return false;
+  }
+
+  return true;
 }
 
 /**
