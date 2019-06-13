@@ -7,6 +7,7 @@
 import { toggleNavMenu, initNavMenuResizeListener } from "./js/menu";
 import { supports_history_api, loadPage, parseURL } from "./js/main";
 
+import "./views/projects.pug";
 import "./styles/main.styl";
 
 const menuToggleEl = document.querySelector(".nav-toggle");
