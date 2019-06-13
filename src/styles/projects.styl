@@ -1,0 +1,82 @@
+/*
+ * Projects List and Detail www.rextwedt.com
+ * Copyright Rex Twedt 2019
+ */
+
+
+h1
+  padding 8px
+
+.project-filters
+  width 100%
+  padding 12px
+  display flex
+  flex-flow row nowrap
+  justify-content space-around
+
+  .filter
+    flex 0 10%
+    padding 12px
+    font-size 12px
+    text-align center
+    align-content center
+    border-radius 4px
+    border 1px solid orange
+    transition all 0.2s ease-out
+    &:hover
+      cursor pointer
+      background #9DC28D
+      transition all 0.2s ease-out
+
+.projects-wrap
+  width 100%
+  padding 12px
+
+  .project-card
+    width 100%
+    padding 8px
+    border 1px solid #bcbcbc
+    display flex
+    flex-flow row nowrap
+    transition all 0.2s ease-out
+    &:hover
+      cursor pointer
+      background #9DC28D
+      transition all 0.2s ease-out
+
+    .project-img
+      flex 0 0 200px
+      display flex
+      align-items center
+      justify-content center
+      width 200px
+      height 200px
+      position relative
+      border 1px solid red
+
+      img
+        max-width 90%
+        max-height 90%
+        box-shadow 1px 1px 2px #bcbcbc
+
+    .project-content
+      flex 0 1 auto
+      align-content center
+      padding 8px
+      border 1px solid green
+
+      h1,
+      p
+        width 100%
+
+
+
+/***** MEDIA QUERIES *****/
+
+@media screen and (min-width: 584px)
+  .nav
+    background-color #513AA2
+
+@media screen and (min-width: 864px)
+  .nav
+    background-color #61B13C
