@@ -5,7 +5,7 @@
  */
 
 import { toggleNavMenu, initNavMenuResizeListener } from "./js/menu";
-import { supports_history_api, loadPage, parseURL } from "./js/main";
+import { supports_history_api, loadPage, parseURL } from "./js/ajax";
 
 import "./views/projects.pug";
 import "./styles/main.styl";

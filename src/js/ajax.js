@@ -48,4 +48,8 @@ function parseURL() {
   return `html/${newHash}.html`;
 }
 
-export { supports_history_api, loadPage, parseURL };
+export {
+  supports_history_api,
+  loadPage,
+  parseURL
+};
