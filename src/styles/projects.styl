@@ -20,13 +20,13 @@ h1
     font-size 12px
     text-align center
     align-content center
-    border-radius 4px
-    border 1px solid orange
+    border-radius 6px
     transition all 0.2s ease-out
+    border 1px solid orange
     &:hover
       cursor pointer
-      background #9DC28D
       transition all 0.2s ease-out
+      background #9DC28D
 
 .projects-wrap
   width 100%
@@ -34,22 +34,31 @@ h1
 
   .project-card
     width 100%
+    height 320px
     padding 8px
-    border 1px solid #bcbcbc
+    margin-top 8px
+    border-radius 20px
     display flex
-    flex-flow row nowrap
+    flex-flow column nowrap
+    position relative
     transition all 0.2s ease-out
+    border 1px solid #bcbcbc
+
+    &:nth-child(1)
+      margin-top 0
+
     &:hover
       cursor pointer
-      background #9DC28D
       transition all 0.2s ease-out
+      background #9DC28D
 
     .project-img
-      flex 1
+      flex 2
       display flex
       align-items center
       justify-content center
-      height 200px
+      height 100%
+      border-radius 12px 12px 0 0
       overflow hidden
       position relative
       border 1px solid red
@@ -62,20 +71,62 @@ h1
       flex 1
       align-content center
       padding 16px
+      height 100%
+      border-radius 0 0 12px 12px
+      overflow hidden
+      text-overflow ellipsis
+      white-space normal
       border 1px solid green
 
       h1,
       p
         width 100%
-
+        padding 4px
 
 
 /***** MEDIA QUERIES *****/
 
 @media screen and (min-width: 584px)
-  .nav
-    background-color #513AA2
+  .projects-wrap
+    padding 12px
+
+    .project-card
+      padding 8px
+      border-radius 20px
+      flex-flow row nowrap
+      margin-top 24px
+
+      .project-img
+        flex 2
+        display flex
+        border-radius 12px 0 0 12px
+        height 100%
+
+      .project-content
+        flex 1
+        align-content center
+        padding 16px
+        height 100%
+        border-radius 0 12px 12px 0
 
 @media screen and (min-width: 864px)
-  .nav
-    background-color #61B13C
+  .projects-wrap
+    padding 12px
+
+    .project-card
+      padding 8px
+      flex-flow row nowrap
+      border-radius 20px
+
+      .project-img
+        flex 2
+        display flex
+        border-radius 12px 0 0 12px
+        height 100%
+
+      .project-content
+        flex 1
+        align-content center
+        padding 16px
+        height 100%
+        border-radius 0 12px 12px 0
