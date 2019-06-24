@@ -1,0 +1,76 @@
+/*
+ * Projects Detail www.rextwedt.com
+ * Copyright Rex Twedt 2019
+ */
+
+
+h1
+  padding 8px
+
+.project-detail-wrap
+  width 100%
+  padding 12px
+
+  .project-detail-img
+    flex 2
+    display flex
+    align-items center
+    justify-content center
+    height 100%
+    border-radius 12px 12px 0 0
+    overflow hidden
+    position relative
+    border 1px solid red
+
+    img
+      width 100%
+      box-shadow 1px 1px 2px #bcbcbc
+
+  .project-detail-content
+    flex 1
+    align-content center
+    padding 16px
+    height 100%
+    border-radius 0 0 12px 12px
+    overflow hidden
+    text-overflow ellipsis
+    white-space normal
+    border 1px solid green
+
+    h1,
+    p
+      width 100%
+      padding 4px
+
+
+/***** MEDIA QUERIES *****/
+
+@media screen and (min-width: 584px)
+  .project-detail-wrap
+    padding 12px
+
+    .project-detail-img
+      flex 2
+      display flex
+      height 100%
+
+    .project-detail-content
+      flex 1
+      align-content center
+      padding 16px
+      height 100%
+
+@media screen and (min-width: 864px)
+  .project-detail-wrap
+    padding 12px
+
+    .project-detail-img
+      flex 2
+      display flex
+      height 100%
+
+    .project-detail-content
+      flex 1
+      align-content center
+      padding 16px
+      height 100%

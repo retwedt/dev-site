@@ -1,0 +1,44 @@
+/*
+ * Image Styles for www.rextwedt.com
+ * Copyright Rex Twedt 2019
+ */
+
+/* GALLERY SETTINGS */
+
+.gallery-wrap
+	display flex
+	flex-flow row wrap
+	align-content center
+	align-items center
+	justify-content space-around
+	// background #04171D
+	background #eee
+	border-radius 4px
+	// box-shadow 2px 2px 2px #3B473D
+	margin 8px
+	padding 12px
+	border 1px solid yellow
+
+	.gallery-img-wrap
+		flex 0 0 auto
+		display inline-block
+		width 240px
+		height 240px
+		overflow hidden
+		background green
+		// background #04171D
+		border-radius 8px
+		box-shadow 2px 2px 2px #3B473D
+		margin 4px auto
+		border 1px solid red
+		img
+			width 96%
+			&:hover
+				width 102%
+				height auto
+				-webkit-transition all 0.5s ease-out
+				transition all 0.5s ease-out
+	.first
+		margin-left 7px
+	.last
+		margin-left 0px
