@@ -4,94 +4,119 @@
  * Copyright Rex Twedt 2019
  */
 
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export default class NavBar extends PureComponent {
-  // const menuToggleEl = document.querySelector(".nav-toggle");
-  // const collapsibleMenuEl = document.querySelector(".nav-collapse");
-  // const copyrightYearEl = document.querySelector("#copyright-year");
-  // // TODO(rex): Improve this...
-  // const contentEl = document.querySelector(".content-wrap");
+/*
+ * Dropdown menu
+ * Adapted from Css-Tricks
+ *  https://css-tricks.com/using-css-transitions-auto-dimensions/
+ * Copyright Rex Twedt 2019
+ */
 
-  // // When window loads, setup events on buttons and browser
-  // window.onload = () => {
-  //   if (supports_history_api()) {
-  //     // Parse url and load page
-  //     const url = parseURL();
-  //     loadPage(url);
+import * as raf from "raf";
 
-  //     // Add click events to all buttons in the nav-wrapper
-  //     const navButtons = collapsibleMenuEl.querySelectorAll("a");
-  //     navButtons.forEach(element => {
-  //       element.addEventListener(
-  //         "click",
-  //         e => {
-  //           //prevent default action of button
-  //           e.preventDefault();
+/**
+ *
+ * @param {*} menuEl
+ */
+function collapseSection(menuEl) {
+  const sectionHeight = menuEl.scrollHeight;
 
-  //           //check for href of element that was clicked on
-  //           let pushURL = element.href;
-  //           const index = pushURL.indexOf("#");
+  const menuElTransition = menuEl.style.transition;
+  menuEl.style.transition = "";
 
-  //           //if there is no href, the user is trying to go home
-  //           if (index < 0) pushURL = "home";
-  //           else pushURL = pushURL.slice(index + 1);
+  raf(() => {
+    menuEl.style.height = `${sectionHeight}px`;
+    menuEl.style.transition = menuElTransition;
 
-  //           contentEl.addEventListener(
-  //             "transitionend",
-  //             async function transitionEndCallback() {
-  //               contentEl.removeEventListener(
-  //                 "transitionend",
-  //                 transitionEndCallback
-  //               );
+    raf(() => {
+      menuEl.style.height = `${0}px`;
+    });
+  });
 
-  //               // Load the page and add it to the history.
-  //               await loadPage(`html/${pushURL}.html`);
+  menuEl.setAttribute("data-collapsed", "true");
+}
 
-  //               contentEl.classList.remove("fade-out");
-  //             }
-  //           );
+/**
+ *
+ * @param {*} menuEl
+ */
+function expandSelection(menuEl) {
+  const sectionHeight = menuEl.scrollHeight;
 
-  //           contentEl.classList.add("fade-out");
+  menuEl.style.height = `${sectionHeight}px`;
 
-  //           // update history.
-  //           window.history.pushState(
-  //             " ",
-  //             null,
-  //             `${window.location.origin}/#${pushURL}`
-  //           );
-  //         },
-  //         true
-  //       );
-  //     });
+  menuEl.addEventListener("transitionend", function transitionEndCallback() {
+    menuEl.removeEventListener("transitionend", transitionEndCallback);
 
-  //     window.addEventListener(
-  //       "popstate",
-  //       _ => {
-  //         // TODO(rex): Handle the transition.
-  //         const url = parseURL();
-  //         loadPage(url);
-  //       },
-  //       false
-  //     );
-  //   }
+    menuEl.style.height = null;
+  });
 
-  //   // Setup the Mobile Nav Menu toggle.
-  //   menuToggleEl.addEventListener("click", _ => {
-  //     toggleNavMenu(collapsibleMenuEl);
-  //   });
+  menuEl.setAttribute("data-collapsed", "false");
+}
 
-  //   // Setup the window resize listener for the Nav Menu.
-  //   window.addEventListener("resize", e => {
-  //     const width = e.target.innerWidth;
-  //     initNavMenuResizeListener(collapsibleMenuEl, width);
-  //   });
+/**
+ *
+ * @param {*} menuEl
+ */
+function toggleNavMenu(menuEl) {
+  const isCollapsed = menuEl.getAttribute("data-collapsed") === "true";
 
-  //   // Set the copyright date to the current year.
-  //   const currentYear = new Date().getFullYear();
-  //   copyrightYearEl.textContent = currentYear;
-  // };
+  if (isCollapsed) {
+    expandSelection(menuEl);
+  } else {
+    collapseSection(menuEl);
+  }
+}
+
+/**
+ *
+ * @param {*} menuEl
+ * @param {*} docWidth
+ */
+function initNavMenuResizeListener(menuEl, docWidth) {
+  if (docWidth >= 584) {
+    menuEl.style.height = null;
+  } else {
+    const isCollapsed = menuEl.getAttribute("data-collapsed") === "true";
+
+    if (isCollapsed) {
+      menuEl.style.height = `${0}px`;
+    } else {
+      const sectionHeight = menuEl.scrollHeight;
+      menuEl.style.height = `${sectionHeight}px`;
+    }
+  }
+}
+
+export { toggleNavMenu, initNavMenuResizeListener };
+
+export default class NavBar extends Component {
+  constructor() {
+    super();
+    this.resizeNav = this.resizeNav.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  componentWillMount() {
+    window.addEventListener("resize", this.resizeNav);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resizeNav);
+  }
+
+  resizeNav(e) {
+    const collapsibleMenuEl = document.querySelector(".nav-collapse");
+    const width = e.target.innerWidth;
+    initNavMenuResizeListener(collapsibleMenuEl, width);
+  }
+
+  toggleMenu(e) {
+    const collapsibleMenuEl = document.querySelector(".nav-collapse");
+    toggleNavMenu(collapsibleMenuEl);
+  }
 
   render() {
     return (
@@ -105,7 +130,11 @@ export default class NavBar extends PureComponent {
                 <h2>Medical Illustration</h2>
               </div>
             </div>
-            <button type="button" className="nav-toggle closed">
+            <button
+              type="button"
+              className="nav-toggle closed"
+              onClick={this.toggleMenu}
+            >
               <span className="screen-reader">Toggle navigation</span>
               <div className="bars" />
               <div className="bars" />
