@@ -11,11 +11,9 @@ export default class Contact extends PureComponent {
     return (
       <Fragment>
         <h1>Contact</h1>
-        <p>
-          Use this contact form to get in touch with Rex, for professional work
-          or just to say hi!
-        </p>
+        <p>I&apos;m not looking for work right now, so fuck off!</p>
         <form
+          className="contact-form"
           action="//formspree.io/rex@rextwedt.com"
           method="POST"
           data-toggle="validator"
@@ -71,11 +69,6 @@ export default class Contact extends PureComponent {
             {" "}
             LinkedIn{" "}
           </a>{" "}
-          |
-          <a href="img/resume_design_v2.pdf" target="_blank" alt="resume">
-            R&eacute;sum&eacute;
-          </a>
-          |<a href="mailto:rex@rextwedt.com">rex@rextwedt.com</a>
         </div>
       </Fragment>
     );

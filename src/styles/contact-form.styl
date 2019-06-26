@@ -3,34 +3,31 @@
  * Copyright Rex Twedt 2019
  */
 
-form
+.contact-form
 	min-height 154px
 	width 80%
 	min-width 320px
 	margin 24px auto
 	background #04171D
 	padding 10px
-	border-radius 4px
+	border-radius 6px
   box-shadow 2px 2px 8px #e3e3e3
 
-	label
-		color white
-		font-weight normal
-		width 100%
-		display block
+	// label
+	// 	width 100%
 
-		.form-label
-			width 120px
-			display inline-block
-			vertical-align top
-
-		input, textarea
-			color #04171D
-			width calc(100% - 120px)
-			resize vertical
-
-	#submit
-		margin-left calc(100% - 54px)
+.form-label
+	color white
+	width 100%
+input, textarea
+	padding 4px
+	color #04171D
+	width 100%
+textarea
+	height 72px
+#submit
+	display block
+	width 24%
 
 
 /***** LINKS *****/
@@ -39,7 +36,7 @@ form
 	margin 10px
 	a
 		text-decoration none
-		margin 2px
+		margin 4px
 	&:first-child
 		margin-left 18px
 
