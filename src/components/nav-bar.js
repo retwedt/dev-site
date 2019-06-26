@@ -75,7 +75,7 @@ function toggleNavMenu(menuEl) {
  * @param {*} menuEl
  * @param {*} docWidth
  */
-function initNavMenuResizeListener(menuEl, docWidth) {
+function configNavMenuOnResize(menuEl, docWidth) {
   if (docWidth >= 584) {
     menuEl.style.height = null;
   } else {
@@ -90,27 +90,25 @@ function initNavMenuResizeListener(menuEl, docWidth) {
   }
 }
 
-export { toggleNavMenu, initNavMenuResizeListener };
-
 export default class NavBar extends Component {
   constructor() {
     super();
-    this.resizeNav = this.resizeNav.bind(this);
+    this.navMenuResizeListener = this.navMenuResizeListener.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentWillMount() {
-    window.addEventListener("resize", this.resizeNav);
+    window.addEventListener("resize", this.navMenuResizeListener);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.resizeNav);
+    window.removeEventListener("resize", this.navMenuResizeListener);
   }
 
-  resizeNav(e) {
+  navMenuResizeListener(e) {
     const collapsibleMenuEl = document.querySelector(".nav-collapse");
     const width = e.target.innerWidth;
-    initNavMenuResizeListener(collapsibleMenuEl, width);
+    configNavMenuOnResize(collapsibleMenuEl, width);
   }
 
   toggleMenu(e) {
@@ -160,3 +158,5 @@ export default class NavBar extends Component {
     );
   }
 }
+
+export { toggleNavMenu, configNavMenuOnResize }
