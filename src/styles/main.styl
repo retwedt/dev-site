@@ -27,6 +27,9 @@ html, body, .app
 	font-family serif
 	color #222
 
+.app
+	overflow-x hidden
+
 /***** SCREEN READERS *****/
 
 .screen-reader
@@ -56,7 +59,7 @@ html, body, .app
 		background-color #DDCBC6
 		padding 8px 16px
 		width 100%
-		max-width 864px
+		max-width 960px
 		margin auto
 	.content-wrap.fade-enter
 		opacity 0
@@ -75,7 +78,7 @@ html, body, .app
 
 .main-content::-webkit-scrollbar
 	width 8px
-		
+
 .main-content::-webkit-scrollbar-track
 	-webkit-box-shadow inset 0 0 6px rgba(0,0,0,0.3)
 
@@ -86,14 +89,13 @@ html, body, .app
 
 /***** MEDIA QUERIES *****/
 
-// // Add horizontal space around containers on phone screens
 @media screen and (min-width 584px)
 	.main-content
 		background-color #7A3AA2
 		.content-wrap
 			background-color #9574A9
 
-@media screen and (min-width: 864px)
+@media screen and (min-width: 960px)
 	.main-content
 		background-color #A23A7E
 		.content-wrap
